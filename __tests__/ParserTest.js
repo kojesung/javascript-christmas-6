@@ -16,7 +16,11 @@ describe('Parser class test', () => {
 
     test('주문할 메뉴와 개수를 입력하면 배열로 반환한다.', () => {
         const menuList = Parser.menuListParser('티본스테이크-1,바비큐립-1,초코케이크-2');
-        expect(menuList).toEqual([{ 티본스테이크: 1 }, { 바비큐립: 1 }, { 초코케이크: 2 }]);
+        expect(menuList).toEqual([
+            { menuName: '티본스테이크', count: 1 },
+            { menuName: '바비큐립', count: 1 },
+            { menuName: '초코케이크', count: 2 },
+        ]);
     });
 
     test('주문할 메뉴와 개수를 20개 이상 입력하면 에러를 반환한다.', () => {
